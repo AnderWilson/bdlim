@@ -139,7 +139,6 @@
 <span class="r-in"><span>  covars <span class="op">=</span> <span class="va">sbd_bdlim</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"MomPriorBMI"</span>,<span class="st">"MomAge"</span>,<span class="st">"race"</span>,<span class="st">"Hispanic"</span>,</span></span>
 <span class="r-in"><span>                                   <span class="st">"EstMonthConcept"</span>,<span class="st">"EstYearConcept"</span><span class="op">)</span><span class="op">]</span>,</span></span>
 <span class="r-in"><span>  group <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">sbd_bdlim</span><span class="op">$</span><span class="va">ChildSex</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">10</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  df <span class="op">=</span> <span class="fl">5</span>,</span></span>
 <span class="r-in"><span>  nits <span class="op">=</span> <span class="fl">5000</span>,</span></span>
 <span class="r-in"><span>  parallel <span class="op">=</span> <span class="cn">FALSE</span></span></span>
@@ -157,15 +156,15 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> bdlim4(y = sbd_bdlim$bwgaz, exposure = sbd_bdlim[, paste0("pm25_", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:37)], covars = sbd_bdlim[, c("MomPriorBMI", "MomAge", "race", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     "Hispanic", "EstMonthConcept", "EstYearConcept")], group = as.factor(sbd_bdlim$ChildSex), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id = as.factor(rep(1:100, 10)), df = 5, nits = 5000, parallel = FALSE)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     df = 5, nits = 5000, parallel = FALSE)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Modification pattern probabilities (higher is better fit):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     bw      b      w    *n* </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 0.0356 0.0688 0.2672 0.6284 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   *bw*      b      w      n </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 0.4940 0.3600 0.1452 0.0008 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Modification pattern WAIC (lower is better fit):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         bw        b        w      *n*</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1713.395 1711.384 1700.913 1693.638</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       *bw*        b        w        n</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1635.946 1637.782 1644.031 1656.078</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Note: Model probabilities tend to favor more complex models compared to WAIC. It is recomended to use model probabilities for selecting the modification pattern and WAIC to compare degrees of freedom for the weight function.</span>
 <span class="r-in"><span></span></span>
@@ -177,122 +176,71 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> bdlim4(y = sbd_bdlim$bwgaz, exposure = sbd_bdlim[, paste0("pm25_", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     1:37)], covars = sbd_bdlim[, c("MomPriorBMI", "MomAge", "race", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     "Hispanic", "EstMonthConcept", "EstYearConcept")], group = as.factor(sbd_bdlim$ChildSex), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     id = as.factor(rep(1:100, 10)), df = 5, nits = 5000, parallel = FALSE)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     df = 5, nits = 5000, parallel = FALSE)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Model fit statistics:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     bw      b      w    *n* </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 0.0356 0.0688 0.2672 0.6284 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   *bw*      b      w      n </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 0.4940 0.3600 0.1452 0.0008 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Estimated cumulative effects:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  group       mean     median         sd       q2.5     q97.5 pr_gr0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      F -0.2267903 -0.2267529 0.06103551 -0.3466868 -0.108116  4e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      M -0.2267903 -0.2267529 0.06103551 -0.3466868 -0.108116  4e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  group        mean       median         sd       q2.5      q97.5 pr_gr0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      F -0.01659887 -0.008101259 0.06340898 -0.1663946  0.1041476 0.4092</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      M -0.44644829 -0.446032044 0.08075686 -0.6050052 -0.2913208 0.0000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Estimated covariate regression coefficients:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 name         mean        median          sd         q2.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               groupF  5.624821160  5.7721477829 6.271686032 -6.614422721</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               groupM  3.637099446  3.7919619468 6.270496814 -8.621734729</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          MomPriorBMI -0.015141097 -0.0151135804 0.003293250 -0.021636874</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               MomAge  0.000657259  0.0006410428 0.003144475 -0.005689806</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          raceAsianPI -0.026316621 -0.0285274326 0.176161895 -0.359612226</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            raceBlack -0.090316157 -0.0922772037 0.180925731 -0.447753924</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            racewhite -0.041939344 -0.0401029332 0.168657808 -0.368151238</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  HispanicNonHispanic  0.249964592  0.2496740653 0.040557252  0.167900119</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept2 -0.117683859 -0.1162305758 0.099746234 -0.313923053</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept3 -0.081992089 -0.0790391832 0.108824667 -0.310351764</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept4 -0.149170919 -0.1509117829 0.106052008 -0.351435639</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept5 -0.069278357 -0.0693923244 0.096960512 -0.256979989</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept6 -0.175959520 -0.1740028467 0.088368831 -0.350093813</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept7 -0.037286427 -0.0372140429 0.094000056 -0.227183817</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept8  0.174537993  0.1751848019 0.108392784 -0.044858712</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept9  0.341945322  0.3432689550 0.111139469  0.111191937</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    EstMonthConcept10  0.490218646  0.4894360421 0.111777833  0.265982668</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    EstMonthConcept11  0.304009864  0.3060651054 0.097585641  0.117837103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    EstMonthConcept12  0.129902742  0.1303490373 0.087902351 -0.046172902</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       EstYearConcept -0.001528952 -0.0015995888 0.003107947 -0.007505089</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 name          mean       median          sd         q2.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           interceptF  5.6583604865  5.587622037 6.324598745 -6.899013907</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           interceptM  6.1139550664  6.113260967 6.328272199 -6.343814379</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          MomPriorBMI -0.0160120545 -0.016071038 0.003164924 -0.022310237</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               MomAge  0.0009648609  0.001019695 0.003001433 -0.005132967</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          raceAsianPI -0.0193478000 -0.022201013 0.176731906 -0.370170412</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            raceBlack -0.1009289662 -0.106402046 0.182161721 -0.461531498</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            racewhite -0.0492555570 -0.052519489 0.169597474 -0.383898780</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  HispanicNonHispanic  0.2561880862  0.256460145 0.040328323  0.177703903</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept2 -0.1456010127 -0.145619513 0.094047066 -0.334729657</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept3 -0.1018310104 -0.100479865 0.097587152 -0.293708791</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept4 -0.1777050692 -0.177051413 0.093697149 -0.360857515</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept5 -0.0997951260 -0.099628993 0.087543279 -0.271519613</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept6 -0.1854240922 -0.184277602 0.083848860 -0.353776238</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept7 -0.0449401834 -0.044617866 0.085212533 -0.207681656</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept8  0.1527704643  0.155778943 0.096301796 -0.045010557</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     EstMonthConcept9  0.3135320710  0.311492996 0.092667590  0.124903697</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    EstMonthConcept10  0.4140296008  0.416152617 0.092321730  0.230822948</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    EstMonthConcept11  0.2225742542  0.223369810 0.086595098  0.048908501</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    EstMonthConcept12  0.0766681663  0.078415748 0.084882644 -0.091700980</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       EstYearConcept -0.0021152456 -0.002081239 0.003139907 -0.008022602</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         q97.5 pr_gr0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  17.777605402 0.8104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  15.822041948 0.7172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.008520297 0.0000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.006913178 0.5884</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.321722617 0.4372</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.269333409 0.3092</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.287119785 0.4104</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.329171160 1.0000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.078250448 0.1156</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.120516974 0.2244</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.050527452 0.0788</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.118466852 0.2372</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.007207836 0.0200</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.142634334 0.3488</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.386702227 0.9388</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.546899249 0.9980</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.700801809 1.0000</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.493729504 0.9992</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.291220209 0.9260</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.004509802 0.3084</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  17.510728856 0.8172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  18.136105017 0.8348</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.009919573 0.0000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.006838140 0.6360</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.336220510 0.4588</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.263360542 0.2780</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.290153392 0.3756</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.335402888 1.0000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.039281343 0.0616</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.084253984 0.1540</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.008351850 0.0300</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.078444107 0.1276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.024539907 0.0148</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.119829195 0.3036</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.331562633 0.9372</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.490990030 0.9996</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.589078559 1.0000</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.388623796 0.9932</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.241981946 0.8176</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.004053558 0.2536</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> BDLIM fit on 1000 observations. Estimated residual standard deviation is 0.544 (0.519,0.571). Estimated random effect standard deviation is 0.183 (0.153,0.219) with 100 levels. WAIC is 1693.638.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> BDLIM fit on 1000 observations. Estimated residual standard deviation is 0.542 (0.519,0.568). WAIC is 1635.946.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Use `plot(); for the summary.bdlim4 object to view estimated distributed lag functions. The `dlfun' object in the summary object contains estimates of the lag functions.</span>
 <span class="r-in"><span><span class="co"># graph the estimated distributed lag functions for each group</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">sfit_sex</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="bdlim4-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># run BDLIM with modification by Hispanic</span></span></span>
-<span class="r-in"><span><span class="va">fit_hisp</span> <span class="op">&lt;-</span> <span class="fu">bdlim4</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  y <span class="op">=</span> <span class="va">sbd_bdlim</span><span class="op">$</span><span class="va">bwgaz</span>,</span></span>
-<span class="r-in"><span>  exposure <span class="op">=</span> <span class="va">sbd_bdlim</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"pm25_"</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">37</span><span class="op">)</span><span class="op">]</span>,</span></span>
-<span class="r-in"><span>  covars <span class="op">=</span> <span class="va">sbd_bdlim</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"MomPriorBMI"</span>,<span class="st">"MomAge"</span>,<span class="st">"race"</span>,<span class="st">"ChildSex"</span>,</span></span>
-<span class="r-in"><span>                                      <span class="st">"EstMonthConcept"</span>,<span class="st">"EstYearConcept"</span><span class="op">)</span><span class="op">]</span>,</span></span>
-<span class="r-in"><span>  group <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">sbd_bdlim</span><span class="op">$</span><span class="va">Hispanic</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  df <span class="op">=</span> <span class="fl">5</span>,</span></span>
-<span class="r-in"><span>  nits <span class="op">=</span> <span class="fl">5000</span>,</span></span>
-<span class="r-in"><span>  parallel <span class="op">=</span> <span class="cn">FALSE</span></span></span>
-<span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> fitting bw</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> fitting b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> fitting w</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> fitting n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> postprocessingpostprocessing</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># show model comparison results</span></span></span>
-<span class="r-in"><span><span class="va">fit_hisp</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> bdlim4(y = sbd_bdlim$bwgaz, exposure = sbd_bdlim[, paste0("pm25_", </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     1:37)], covars = sbd_bdlim[, c("MomPriorBMI", "MomAge", "race", </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     "ChildSex", "EstMonthConcept", "EstYearConcept")], group = as.factor(sbd_bdlim$Hispanic), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     df = 5, nits = 5000, parallel = FALSE)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Modification pattern probabilities (higher is better fit):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   *bw*      b      w      n </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 0.5496 0.2148 0.1540 0.0816 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Modification pattern WAIC (lower is better fit):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       *bw*        b        w        n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1650.533 1653.597 1655.695 1655.712</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Note: Model probabilities tend to favor more complex models compared to WAIC. It is recomended to use model probabilities for selecting the modification pattern and WAIC to compare degrees of freedom for the weight function.</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># summarize results for best fitting pattern of modification</span></span></span>
-<span class="r-in"><span><span class="va">sfit_hisp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit_hisp</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># graph the estimated distributed lag functions for each group</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">sfit_hisp</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="bdlim4-2.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># summarize and force results from model with</span></span></span>
-<span class="r-in"><span><span class="co"># subgroup-specific effects and weights</span></span></span>
-<span class="r-in"><span><span class="va">sfit_hisp_bw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit_hisp</span>, model<span class="op">=</span><span class="st">"bw"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">sfit_hisp_bw</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="bdlim4-3.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>

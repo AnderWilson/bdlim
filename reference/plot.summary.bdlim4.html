@@ -113,11 +113,11 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Modification pattern probabilities (higher is better fit):</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   *bw*      b      w      n </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 0.4284 0.4280 0.1436 0.0000 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 0.5316 0.3612 0.1060 0.0012 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Modification pattern WAIC (lower is better fit):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         bw      *b*        w       n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1636.728 1634.775 1644.194 1656.08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      *bw*        b        w        n</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1634.63 1636.322 1644.544 1656.145</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Note: Model probabilities tend to favor more complex models compared to WAIC. It is recomended to use model probabilities for selecting the modification pattern and WAIC to compare degrees of freedom for the weight function.</span>
 <span class="r-in"><span></span></span>
@@ -137,20 +137,20 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># the summary file has the data to make this plot</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">sfit_sex</span><span class="op">$</span><span class="va">dlfun</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   group time         mean        median          sd        q2.5       q97.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     F    1 -0.001367659 -0.0004736875 0.007697794 -0.01789192 0.014422480</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     F    2 -0.001879882 -0.0008344146 0.006393351 -0.01617016 0.010804188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     F    3 -0.002373050 -0.0012927230 0.005331644 -0.01488186 0.007329826</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     F    4 -0.002828106 -0.0017622050 0.004637441 -0.01422065 0.004805741</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     F    5 -0.003225995 -0.0021469417 0.004384474 -0.01448286 0.003016109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     F    6 -0.003547662 -0.0024776188 0.004505991 -0.01481953 0.002527375</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group time          mean        median          sd        q2.5       q97.5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1     F    1 -0.0003490371 -9.270483e-05 0.007816792 -0.01706734 0.017316128</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2     F    2 -0.0009985932 -4.063122e-04 0.006361837 -0.01543235 0.012458078</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     F    3 -0.0016288140 -9.604084e-04 0.005140199 -0.01362299 0.008198118</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4     F    4 -0.0022203644 -1.413547e-03 0.004306654 -0.01266242 0.005071297</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5     F    5 -0.0027539091 -1.699400e-03 0.003990050 -0.01217955 0.003228750</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6     F    6 -0.0032101129 -2.139796e-03 0.004145476 -0.01282832 0.002611162</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   pr_gr0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 0.4340</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 0.3832</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 0.3228</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 0.2620</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 0.2256</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 0.1992</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 0.4856</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 0.4376</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 0.3800</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 0.3292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 0.2592</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 0.2228</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
