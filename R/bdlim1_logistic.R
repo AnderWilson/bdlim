@@ -14,7 +14,7 @@
 #' @param nburn Number of MCMC iterations to be discarded as burn in. The default is half if the MCMC iterations. This is only used for WAIC in this function but is passed to summary and plot functions and used there.
 #' @param nthin Thinning factors for the MCMC. This is only used for WAIC in this function but is passed to summary and plot functions and used there.
 #'
-#' @importFrom stats lm sd rnorm rgamma dbinom runif model.matrix
+#' @importFrom stats lm sd rnorm rgamma dbinom runif model.matrix na.omit
 #' @importFrom LaplacesDemon WAIC
 #' @importFrom BayesLogit rpg
 #'
