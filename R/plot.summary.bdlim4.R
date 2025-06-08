@@ -1,6 +1,6 @@
 
 
-#' Plot for Summary pf BDLIM
+#' Plot for Summary of BDLIM
 #'
 #' @param x An object of class summary.bdlim4.
 #' @param ... Not used.
@@ -22,3 +22,4 @@ plot.summary.bdlim4 <- function(x, ...){
 
   return(p)
 }
+
