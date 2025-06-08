@@ -10,7 +10,7 @@
 #'
 #' @importFrom stats median quantile
 #'
-#' @return An object of class summary.bdlim2.
+#' @return An object of class summary.bdlim4.
 #' @export
 #'
 #' @example inst/examples/summary_example.R
@@ -133,7 +133,7 @@ summary.bdlim4 <- function(object, model=NULL, ...){
 #'
 #' @importFrom stats median quantile
 #'
-#' @return An object of class summary.bdlim2.
+#' @return An object of class summary.bdlim1.
 #' @export
 #'
 
@@ -144,8 +144,8 @@ summary.bdlim1 <- function(object, ...){
   }
 
   # check which iterations to keep.
-  if(is.null(object$call$nburn)){
-    object$call$nburn <- round(object$call$nits/2)
+  if(is.null(object$nburn)){
+    object$nburn <- round(object$call$nits/2)
   }
   if(is.null(object$call$nthin)){
     object$call$nthin <- 1
