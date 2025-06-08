@@ -249,6 +249,9 @@ bdlim1_logistic <- function(y, exposure, covars,group,id=NULL,w_free, b_free, df
     nthin=nthin,
     REmodel=REmodel,
     family="binomial",
+    nits = nits,
+    nburn = nburn,
+    nthin = nthin,
     call=match.call()
   )
 

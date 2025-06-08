@@ -19,6 +19,8 @@
 #'
 #' @return A list with posteriors of parameters
 #' @export
+#'
+#' @example inst/examples/bdlim1_example.R
 
 bdlim1 <- function(y, exposure, covars, group, id=NULL, w_free, b_free, df, nits, nburn=round(nits/2), nthin=1){
 
@@ -249,6 +251,9 @@ bdlim1 <- function(y, exposure, covars, group, id=NULL, w_free, b_free, df, nits
     nthin=nthin,
     REmodel=REmodel,
     family="gaussian",
+    nits = nits,
+    nburn = nburn,
+    nthin = nthin,
     call=match.call()
   )
 

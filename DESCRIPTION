@@ -1,7 +1,7 @@
 Package: bdlim
 Title: Bayesian Distributed Lag Interaction Models
-Version: 0.4.3
-Date: 2024-06-26
+Version: 0.5.0
+Date: 2025-06-08
 Authors@R: c(person(given = "Ander",
                    family = "Wilson",
                     role = c("aut", "cre"),
@@ -12,7 +12,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Imports: LaplacesDemon, ggplot2, parallel, BayesLogit
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 BugReports: https://github.com/anderwilson/bdlim/issues/
 URL: https://anderwilson.github.io/bdlim/, https://github.com/AnderWilson/bdlim/
 Depends: R (>= 2.10)

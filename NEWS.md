@@ -1,3 +1,7 @@
+# bdlim 0.5.0
+
+Minor updates to allow for summary and plot.summary functions to work with bdlim1 objects. Now the bdlim1 model can be run to fit a single modification pattern and the same summary and plot functions apply.
+
 # bdlim 0.4.3
 
 Patch to remove dependencies on dplyr and tidyr.

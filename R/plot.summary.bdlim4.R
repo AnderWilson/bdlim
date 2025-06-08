@@ -23,3 +23,22 @@ plot.summary.bdlim4 <- function(x, ...){
   return(p)
 }
 
+
+#' Plot for Summary of BDLIM (summary.bdlim1 version)
+#'
+#' @param x An object of class summary.bdlim1.
+#' @param ... Not used.
+#' @importFrom ggplot2 ggplot aes_string geom_ribbon geom_line facet_wrap theme_light xlab ylab
+#'
+#' @return An ggplot2 figure.
+#' @export
+#'
+#' @example inst/examples/plot_example.R
+
+plot.summary.bdlim1 <- function(x, ...){
+
+  p <- plot.summary.bdlim4(x, ...)
+
+  return(p)
+}
+

@@ -12,7 +12,7 @@
 \item{...}{Not used.}
 }
 \value{
-An object of class summary.bdlim2.
+An object of class summary.bdlim1.
 }
 \description{
 Summary for bdlim1

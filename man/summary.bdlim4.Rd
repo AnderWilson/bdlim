@@ -14,7 +14,7 @@
 \item{...}{Other arguments}
 }
 \value{
-An object of class summary.bdlim2.
+An object of class summary.bdlim4.
 }
 \description{
 Summary for bdlim4

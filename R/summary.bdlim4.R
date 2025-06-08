@@ -139,22 +139,10 @@ summary.bdlim4 <- function(object, model=NULL, ...){
 
 summary.bdlim1 <- function(object, ...){
 
-  if(object$call$nburn=="nburn"){
-    stop("Use summary of the bdlim4 object. Use option `model' to get a specific bdlim1 model.")
-  }
-
-  # check which iterations to keep.
-  if(is.null(object$nburn)){
-    object$nburn <- round(object$call$nits/2)
-  }
-  if(is.null(object$call$nthin)){
-    object$call$nthin <- 1
-  }
-  iter_keep <- seq(object$call$nburn+1, object$call$nits, by=object$call$nthin)
+  iter_keep <- seq(object$nburn+1, object$nits, by=object$nthin)
 
   out <- list(WAIC = object$WAIC$WAIC,
               call = object$call)
-
 
   #OR scale for binomial
   if(object$family=="binomial"){
