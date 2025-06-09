@@ -4,6 +4,8 @@ Minor updates to allow for summary and plot.summary functions to work with bdlim
 
 The function bdlim1 now works with a only one group. This fits a Bayesian distributed lag model without modification.
 
+Add new function getw to extract the posterior sample of the weight function from a bdlim1 object.
+
 # bdlim 0.4.3
 
 Patch to remove dependencies on dplyr and tidyr.

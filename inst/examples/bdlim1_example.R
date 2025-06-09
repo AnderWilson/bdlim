@@ -19,6 +19,7 @@ fit_sex
 #summarize results
 sfit_sex <- summary(fit_sex)
 sfit_sex
+
 # graph the estimated distributed lag functions for each group
 plot(sfit_sex)
 
@@ -45,7 +46,11 @@ fit_onegroup
 #summarize results
 sfit_onegroup <- summary(fit_onegroup)
 sfit_onegroup
+
 # graph the estimated distributed lag functions for the one group
 plot(sfit_onegroup)
+
+# extract the weight function
+getw(fit_onegroup)
 
 }
