@@ -29,6 +29,15 @@ bdlim1 <- function(y, exposure, covars, group, id=NULL, w_free, b_free, df, nits
     stop("group must be a factor variable.")
   }
 
+  # allow for only one group
+  if(length(unique(group))==1){
+    if(!w_free & !b_free){
+      group <- rep(1,length(group))
+    }else{
+      stop("heterogeneity not allowed with only one group")
+    }
+  }
+
   # make sure exposure is a data.frame
   if (is.null(colnames(exposure))) {
     colnames(exposure) <- paste0("exposure", 1:ncol(exposure))
@@ -58,7 +67,6 @@ bdlim1 <- function(y, exposure, covars, group, id=NULL, w_free, b_free, df, nits
   if(!is.null(id)){
     RE <- model.matrix(~id-1)
     RElocation <- 1:ncol(RE)
-    alldata <- cbind(RE,alldata)
     REmodel <- TRUE
     nRE <- ncol(RE)
   }else{
@@ -70,11 +78,23 @@ bdlim1 <- function(y, exposure, covars, group, id=NULL, w_free, b_free, df, nits
   # dimensions
   n <- nrow(alldata)
   n_groups <- length(unique(alldata$group))
-  names_groups <- levels(alldata$group)
+  if(n_groups>1){
+    names_groups <- levels(alldata$group)
+  }else{
+    names_groups <- "all"
+  }
+
   n_times <- ncol(exposure)
 
   # design matrix for covariates and main effects of group
   mm <- model.matrix(y~.-1, data=alldata)
+
+  # add random effects
+  if(REmodel){
+    mm <- cbind(RE,mm)
+  }
+
+  # get design matrix excluding covariates
   design <- mm[,-c(ncol(mm)+1-c(ncol(exposure):1))]
 
   # exposure matrix
