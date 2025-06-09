@@ -2,6 +2,8 @@
 
 Minor updates to allow for summary and plot.summary functions to work with bdlim1 objects. Now the bdlim1 model can be run to fit a single modification pattern and the same summary and plot functions apply.
 
+The function bdlim1 now works with a only one group. This fits a Bayesian distributed lag model without modification.
+
 # bdlim 0.4.3
 
 Patch to remove dependencies on dplyr and tidyr.
