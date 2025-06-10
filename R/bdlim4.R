@@ -111,7 +111,11 @@ bdlim4 <- function(
 
   # parallel - Gaussian
   if (parallel & toupper(family) == "GAUSSIAN") {
-    message("fitting models in parallel with", min(detectCores(), 4), "cores\n")
+    message(
+      "Fitting models in parallel with ",
+      min(detectCores(), 4),
+      " cores.\n"
+    )
     cl <- makeCluster(min(detectCores(), 4))
     clusterExport(
       cl,
