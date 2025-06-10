@@ -11,9 +11,11 @@
 #' @param nits Number of MCMC iterations.
 #' @param nburn Number of MCMC iterations to be discarded as burn in. The default is half if the MCMC iterations. This is only used for WAIC in this function but is passed to summary and plot functions and used there.
 #' @param nthin Thinning factors for the MCMC. This is only used for WAIC in this function but is passed to summary and plot functions and used there.
+#' @param progress Logical indicating if a progress bar should be shown during MCMC iterations. Default is TRUE.
 #'
 #' @importFrom stats lm sd rnorm rgamma dnorm runif model.matrix na.omit
 #' @importFrom LaplacesDemon WAIC
+#' @importFrom utils txtProgressBar setTxtProgressBar
 #'
 #' @return A list with posteriors of parameters
 #' @export
@@ -31,7 +33,8 @@ bdlim1 <- function(
   df,
   nits,
   nburn = round(nits / 2),
-  nthin = 1
+  nthin = 1,
+  progress = TRUE
 ) {
   # make sure group is a factor variable
   if (!is.factor(group)) {
@@ -179,6 +182,19 @@ bdlim1 <- function(
   iter_keep <- seq(nburn + 1, nits, by = nthin)
   ll_all_keep <- matrix(NA, n, length(iter_keep))
 
+  # initiate progress bar
+  if (progress) {
+    message(
+      "Start MCMC for bdlim1 with w_free=",
+      w_free,
+      " and b_free=",
+      b_free,
+      "."
+    )
+
+    progress_bar = txtProgressBar(min = 0, max = nits, style = 3, char = "=")
+  }
+
   for (i in 1:nits) {
     # update regression coefficients
     V <- t(design) %*% design / (sigma^2)
@@ -261,6 +277,23 @@ bdlim1 <- function(
         log = TRUE
       )
     }
+
+    # update progress bar
+    if (progress) {
+      setTxtProgressBar(progress_bar, value = i)
+    }
+  } # end MCMC loop
+
+  # close progress bar
+  if (progress) {
+    close(progress_bar)
+    message(
+      "End MCMC for bdlim1 with w_free=",
+      w_free,
+      " and b_free=",
+      b_free,
+      "."
+    )
   }
 
   # format

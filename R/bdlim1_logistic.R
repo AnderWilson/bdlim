@@ -11,9 +11,11 @@
 #' @param nits Number of MCMC iterations.
 #' @param nburn Number of MCMC iterations to be discarded as burn in. The default is half if the MCMC iterations. This is only used for WAIC in this function but is passed to summary and plot functions and used there.
 #' @param nthin Thinning factors for the MCMC. This is only used for WAIC in this function but is passed to summary and plot functions and used there.
+#' @param progress Logical indicating if a progress bar should be shown during MCMC iterations. Default is TRUE.
 #'
 #' @importFrom stats lm sd rnorm rgamma dbinom runif model.matrix na.omit
 #' @importFrom LaplacesDemon WAIC
+#' @importFrom utils txtProgressBar setTxtProgressBar
 #' @importFrom BayesLogit rpg
 #'
 #' @return A list with posteriors of parameters
@@ -30,7 +32,8 @@ bdlim1_logistic <- function(
   df,
   nits,
   nburn = round(nits / 2),
-  nthin = 1
+  nthin = 1,
+  progress = TRUE
 ) {
   # make sure group is a factor variable
   if (!is.factor(group)) {
@@ -175,6 +178,19 @@ bdlim1_logistic <- function(
   # set linear predictor to 0 for starting values
   pred_mean_model_scale <- rep(0, n)
 
+  # initiate progress bar
+  if (progress) {
+    message(
+      "Start MCMC for bdlim1 with w_free=",
+      w_free,
+      " and b_free=",
+      b_free,
+      "."
+    )
+
+    progress_bar = txtProgressBar(min = 0, max = nits, style = 3, char = "=")
+  }
+
   for (i in 1:nits) {
     # omega from PG augmentation
     w_pg <- rpg(n, 1, pred_mean_model_scale)
@@ -239,6 +255,23 @@ bdlim1_logistic <- function(
 
       # update theta (w and design are already updated)
       theta[j, ] <- theta_prop
+
+      # update progress bar
+      if (progress) {
+        setTxtProgressBar(progress_bar, value = i)
+      }
+    } # end MCMC loop
+
+    # close progress bar
+    if (progress) {
+      close(progress_bar)
+      message(
+        "End MCMC for bdlim1 with w_free=",
+        w_free,
+        " and b_free=",
+        b_free,
+        "."
+      )
     }
 
     # save values

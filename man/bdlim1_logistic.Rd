@@ -15,7 +15,8 @@ bdlim1_logistic(
   df,
   nits,
   nburn = round(nits/2),
-  nthin = 1
+  nthin = 1,
+  progress = TRUE
 )
 }
 \arguments{
@@ -40,6 +41,8 @@ bdlim1_logistic(
 \item{nburn}{Number of MCMC iterations to be discarded as burn in. The default is half if the MCMC iterations. This is only used for WAIC in this function but is passed to summary and plot functions and used there.}
 
 \item{nthin}{Thinning factors for the MCMC. This is only used for WAIC in this function but is passed to summary and plot functions and used there.}
+
+\item{progress}{Logical indicating if a progress bar should be shown during MCMC iterations. Default is TRUE.}
 }
 \value{
 A list with posteriors of parameters
