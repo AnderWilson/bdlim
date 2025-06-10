@@ -1,5 +1,3 @@
-
-
 #' Plot for Summary of BDLIM
 #'
 #' @param x An object of class summary.bdlim4.
@@ -11,10 +9,13 @@
 #'
 #' @example inst/examples/plot_example.R
 
-plot.summary.bdlim4 <- function(x, ...){
-
-  p <- ggplot(x$dlfun,  aes_string(x="time", y="mean", ymin="q2.5", ymax="q97.5")) +
-    geom_ribbon(color="grey70", fill="grey70") + geom_line() +
+plot.summary.bdlim4 <- function(x, ...) {
+  p <- ggplot(
+    x$dlfun,
+    aes_string(x = "time", y = "mean", ymin = "q2.5", ymax = "q97.5")
+  ) +
+    geom_ribbon(color = "grey70", fill = "grey70") +
+    geom_line() +
     facet_wrap(~group) +
     theme_light() +
     ylab("Estimated distributed lag function") +
@@ -35,10 +36,8 @@ plot.summary.bdlim4 <- function(x, ...){
 #'
 #' @example inst/examples/plot_example.R
 
-plot.summary.bdlim1 <- function(x, ...){
-
+plot.summary.bdlim1 <- function(x, ...) {
   p <- plot.summary.bdlim4(x, ...)
 
   return(p)
 }
-
