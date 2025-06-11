@@ -34,7 +34,6 @@ reference:
       - print.bdlim4
       - print.bdlim1
       - print.summary.bdlim4
-      - print.summary.bdlim1
       - makebasis
       - modelcompare
   - title: Data
