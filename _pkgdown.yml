@@ -23,15 +23,18 @@ reference:
     contents:
       - summary.bdlim4
       - plot.summary.bdlim4
-      - print.bdlim4
-      - print.summary.bdlim4
+      - getw
   - title: Other functions
     desc:  Mostly helper function or functions unlikely to be used by end users
     contents:
       - bdlim1
       - bdlim1_logistic
       - summary.bdlim1
+      - plot.summary.bdlim1
+      - print.bdlim4
       - print.bdlim1
+      - print.summary.bdlim4
+      - print.summary.bdlim1
       - makebasis
       - modelcompare
   - title: Data
