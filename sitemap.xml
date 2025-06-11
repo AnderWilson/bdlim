@@ -1,66 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/404.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/articles/bdlim.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/index.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/bdlim-package.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/bdlim1.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/bdlim1_logistic.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/bdlim4.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/makebasis.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/modelcompare.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/plot.summary.bdlim4.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/print.bdlim1.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/print.bdlim4.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/print.summary.bdlim4.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/sbd_bdlim.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/summary.bdlim1.html</loc>
-  </url>
-  <url>
-    <loc>https://anderwilson.github.io/bdlim/reference/summary.bdlim4.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://anderwilson.github.io/bdlim/404.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/LICENSE.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/articles/bdlim.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/articles/index.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/authors.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/index.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/news/index.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/bdlim-package.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/bdlim1.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/bdlim1_logistic.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/bdlim4.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/getw.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/index.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/makebasis.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/modelcompare.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/plot.summary.bdlim1.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/plot.summary.bdlim4.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/print.bdlim1.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/print.bdlim4.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/print.summary.bdlim4.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/sbd_bdlim.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/summary.bdlim1.html</loc></url>
+<url><loc>https://anderwilson.github.io/bdlim/reference/summary.bdlim4.html</loc></url>
 </urlset>
+
